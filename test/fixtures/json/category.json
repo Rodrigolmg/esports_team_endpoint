@@ -1,0 +1,11 @@
+{
+  "flag": "csgo",
+  "id": 1572,
+  "name": "CS:GO",
+  "slug": "csgo",
+  "sport": {
+    "id": 72,
+    "name": "E-sports",
+    "slug": "esports"
+  }
+}
