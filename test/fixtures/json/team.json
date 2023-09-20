@@ -1,38 +1,36 @@
 {
-  "team": {
-    "category": {
-      "flag": "csgo",
-      "id": 1572,
-      "name": "CS:GO",
-      "slug": "csgo",
-      "sport": {
-        "id": 72,
-        "name": "E-sports",
-        "slug": "esports"
-      }
-    },
-    "country": {
-      "alpha2": "ZA",
-      "name": "South Africa"
-    },
-    "fullName": "ATK",
-    "id": 363904,
-    "name": "ATK",
-    "nameCode": "ATK",
-    "national": false,
-    "shortName": "ATK",
-    "slug": "atk",
+  "category": {
+    "flag": "csgo",
+    "id": 1572,
+    "name": "CS:GO",
+    "slug": "csgo",
     "sport": {
       "id": 72,
       "name": "E-sports",
       "slug": "esports"
-    },
-    "teamColors": {
-      "primary": "#52b030",
-      "secondary": "#52b030",
-      "text": "#ffffff"
-    },
-    "type": 0,
-    "userCount": 35
-  }
+    }
+  },
+  "country": {
+    "alpha2": "ZA",
+    "name": "South Africa"
+  },
+  "fullName": "ATK",
+  "id": 363904,
+  "name": "ATK",
+  "nameCode": "ATK",
+  "national": false,
+  "shortName": "ATK",
+  "slug": "atk",
+  "sport": {
+    "id": 72,
+    "name": "E-sports",
+    "slug": "esports"
+  },
+  "teamColors": {
+    "primary": "#52b030",
+    "secondary": "#52b030",
+    "text": "#ffffff"
+  },
+  "type": 0,
+  "userCount": 35
 }
