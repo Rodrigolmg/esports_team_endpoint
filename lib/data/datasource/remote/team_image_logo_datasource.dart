@@ -13,7 +13,17 @@ class TeamImageLogoDataSourceImpl implements TeamImageLogoDataSource {
   });
 
   @override
-  Future<Uint8List?> getTeamLogo(int? teamId) {
-    throw UnimplementedError();
+  Future<Uint8List?> getTeamLogo(int? teamId) async {
+    Response response = await dio.getMethod(UrlPath.teamLogoPath(teamId));
+    if(response.statusCode != null && response.statusCode == 200){
+      if((response.data as String).isEmpty){
+        throw ServerException(statusCode: 204);
+      }
+
+      Uint8List bytes = ImageHandler.convertBase64(response.data);
+      return Future.value(bytes);
+    } else {
+      throw ServerException(statusCode: response.statusCode);
+    }
   }
 }
