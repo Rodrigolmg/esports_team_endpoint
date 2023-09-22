@@ -7,15 +7,27 @@ abstract class TeamDetailLocalDataSource {
 
 class TeamDetailLocalDataSourceImpl implements TeamDetailLocalDataSource {
   @override
-  Future<void> cacheTeamDetail(TeamModel team) {
-    // TODO: implement cacheTeamDetail
-    throw UnimplementedError();
+  Future<void> cacheTeamDetail(TeamModel team) async {
+    Box teamDetailBox = Hive.box(DataSourceBoxName.teamDetailBoxName);
+
+    if(!teamDetailBox.isOpen){
+      teamDetailBox = await Hive.openBox(DataSourceBoxName.teamDetailBoxName);
+    }
+
+    teamDetailBox.add(team);
   }
 
   @override
-  Future<TeamModel?> getLastTeamDetail(int? teamId) {
-    // TODO: implement getLastTeamDetail
-    throw UnimplementedError();
+  Future<TeamModel?> getLastTeamDetail(int? teamId) async {
+    Box<TeamModel> teamDetailBox = Hive.box(DataSourceBoxName.teamDetailBoxName);
+
+    if(!teamDetailBox.isOpen){
+      teamDetailBox = await Hive.openBox(DataSourceBoxName.teamDetailBoxName);
+    }
+
+    TeamModel? lastTeamDetail
+      = teamDetailBox.values.lastWhere((element) => element.id == teamId);
+    return lastTeamDetail;
   }
 
 }
